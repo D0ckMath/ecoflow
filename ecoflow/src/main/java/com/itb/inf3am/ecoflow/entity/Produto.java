@@ -20,7 +20,7 @@ public class Produto {
     @Column(nullable = false)
     private LocalDateTime dataCadastro;
 
-    @Lob
+    @Column(columnDefinition = "VARBINARY(MAX)")
     private byte[] foto;
 
     @Column(length = 20)

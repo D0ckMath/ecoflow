@@ -2,7 +2,6 @@ package com.itb.inf3am.ecoflow.service;
 
 import com.itb.inf3am.ecoflow.entity.Usuario;
 import com.itb.inf3am.ecoflow.repository.UsuarioRepository;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -12,11 +11,9 @@ import java.util.List;
 public class UsuarioService {
 
     private final UsuarioRepository repository;
-    private final PasswordEncoder passwordEncoder;
 
-    public UsuarioService(UsuarioRepository repository, PasswordEncoder passwordEncoder) {
+    public UsuarioService(UsuarioRepository repository) {
         this.repository = repository;
-        this.passwordEncoder = passwordEncoder;
     }
 
     public List<Usuario> listarTodos() {
@@ -31,7 +28,6 @@ public class UsuarioService {
     public Usuario criar(Usuario usuario) {
         if (repository.existsByUsername(usuario.getUsername()))
             throw new RuntimeException("Username já cadastrado: " + usuario.getUsername());
-        usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
         usuario.setDataCadastro(LocalDateTime.now());
         usuario.setStatusUsuario("ATIVO");
         return repository.save(usuario);

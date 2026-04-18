@@ -23,7 +23,7 @@ public class Usuario {
     @Column(length = 10)
     private String nivelAcesso;
 
-    @Lob
+    @Column(columnDefinition = "VARBINARY(MAX)")
     private byte[] foto;
 
     @Column(nullable = false)
