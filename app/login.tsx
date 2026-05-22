@@ -86,6 +86,11 @@ export default function LoginScreen() {
           <Text style={styles.btnPrimaryText}>Entrar</Text>
         </TouchableOpacity>
 
+        {/* Atalho dev */}
+        <TouchableOpacity style={styles.btnDev} onPress={() => router.push('/home')} activeOpacity={0.85}>
+          <Text style={styles.btnDevText}>🚧 Ir para Home (dev)</Text>
+        </TouchableOpacity>
+
         {/* Cadastro */}
         <TouchableOpacity onPress={() => router.push('/register')} style={styles.registerLink}>
           <Text style={styles.registerText}>
@@ -208,5 +213,19 @@ const styles = StyleSheet.create({
   registerTextBold: {
     color: Colors.primary,
     fontWeight: '700',
+  },
+  btnDev: {
+    alignItems: 'center',
+    marginTop: 12,
+    paddingVertical: 12,
+    borderRadius: 12,
+    borderWidth: 1.5,
+    borderColor: Colors.border,
+    borderStyle: 'dashed',
+  },
+  btnDevText: {
+    fontSize: 14,
+    color: Colors.placeholder,
+    fontWeight: '600',
   },
 });
