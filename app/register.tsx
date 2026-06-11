@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView, Alert,
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import { Colors } from '../constants/theme';
-import EcoFlowLogo from '../components/EcoFlowLogo';
+import EcoFlowIcon from '../components/EcoFlowIcon';
 
 export default function RegisterScreen() {
   const router = useRouter();
@@ -27,7 +27,7 @@ export default function RegisterScreen() {
   return (
     <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       <View style={styles.topIcon}>
-        <EcoFlowLogo size={80} showText={false} />
+        <EcoFlowIcon size={80} />
       </View>
 
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>

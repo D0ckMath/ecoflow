@@ -18,11 +18,11 @@ const CATEGORIES = [
 ];
 
 const ADS = [
-  { id: '1', title: 'Garrafas PET', category: 'Plástico', user: 'João Silva', location: 'São Paulo, SP', description: 'Garrafas PET limpas, diversas capacidades. Ótimas para artesanato.' },
-  { id: '2', title: 'Caixas de Papelão', category: 'Papel e Papelão', user: 'Maria Souza', location: 'Rio de Janeiro, RJ', description: 'Caixas de papelão resistentes, vários tamanhos disponíveis.' },
-  { id: '3', title: 'Vidros de Conserva', category: 'Vidro', user: 'Carlos Lima', location: 'Belo Horizonte, MG', description: 'Potes de vidro com tampa, ideais para decoração e armazenamento.' },
-  { id: '4', title: 'Latas de Alumínio', category: 'Metal', user: 'Ana Costa', location: 'Curitiba, PR', description: 'Latas de alumínio amassadas ou inteiras, prontas para reciclagem.' },
-  { id: '5', title: 'Paletes de Madeira', category: 'Madeira', user: 'Pedro Alves', location: 'Porto Alegre, RS', description: 'Paletes em bom estado, perfeitos para móveis e decoração.' },
+  { id: '1', title: 'Espada do God of War', category: 'Papel e papelão', user: 'João Silva', phone: '(11) 91234-5678', location: 'São Paulo, SP', description: 'Fiz essa espada para um cosplay do Kratos na BGS de 2025, estou doando está espada pois ela não tem mais utilidade para mim quem tiver interesse é só entrar em contato' },
+  { id: '2', title: 'Caixas de Papelão', category: 'Papel e Papelão', user: 'Maria Souza', phone: '(21) 98765-4321', location: 'Rio de Janeiro, RJ', description: 'Caixas de papelão resistentes, vários tamanhos disponíveis.' },
+  { id: '3', title: 'Vidros de Conserva', category: 'Vidro', user: 'Carlos Lima', phone: '(31) 97654-3210', location: 'Belo Horizonte, MG', description: 'Potes de vidro com tampa, ideais para decoração e armazenamento.' },
+  { id: '4', title: 'Latas de Alumínio', category: 'Metal', user: 'Ana Costa', phone: '(41) 96543-2109', location: 'Curitiba, PR', description: 'Latas de alumínio amassadas ou inteiras, prontas para reciclagem.' },
+  { id: '5', title: 'Paletes de Madeira', category: 'Madeira', user: 'Pedro Alves', phone: '(51) 95432-1098', location: 'Porto Alegre, RS', description: 'Paletes em bom estado, perfeitos para móveis e decoração.' },
 ];
 
 type Ad = typeof ADS[0];
@@ -300,6 +300,10 @@ export default function HomeScreen() {
                 <Text style={styles.adMetaText}>{selectedAd.user}</Text>
                 <Ionicons name="location-outline" size={14} color={Colors.textSecondary} style={{ marginLeft: 8 }} />
                 <Text style={styles.adMetaText}>{selectedAd.location}</Text>
+              </View>
+              <View style={[styles.adMeta, { marginTop: 6 }]}>
+                <Ionicons name="call-outline" size={14} color={Colors.textSecondary} />
+                <Text style={styles.adMetaText}>{selectedAd.phone}</Text>
               </View>
 
               {/* Divisor + Avaliações */}

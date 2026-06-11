@@ -9,7 +9,7 @@ export default function WelcomeScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <EcoFlowLogo size={140} showText={false} />
+        <EcoFlowLogo size={140} />
         <Text style={styles.appName}>EcoFlow</Text>
       </View>
 
