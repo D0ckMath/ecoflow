@@ -1,10 +1,18 @@
-import {
-  View, Text, StyleSheet, SafeAreaView, ScrollView,
-  TouchableOpacity, TextInput, Dimensions, NativeSyntheticEvent,
-  NativeScrollEvent, Modal, Alert,
-} from 'react-native';
-import { useRef, useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
+import { useRef, useState } from 'react';
+import {
+  Alert,
+  Dimensions,
+  Modal,
+  NativeScrollEvent,
+  NativeSyntheticEvent,
+  SafeAreaView, ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { Colors } from '../constants/theme';
 
 const { width } = Dimensions.get('window');
@@ -18,19 +26,15 @@ const CATEGORIES = [
 ];
 
 const ADS = [
-  { id: '1', title: 'Espada do God of War', category: 'Papel e papelão', user: 'João Silva', phone: '(11) 91234-5678', location: 'São Paulo, SP', description: 'Fiz essa espada para um cosplay do Kratos na BGS de 2025, estou doando está espada pois ela não tem mais utilidade para mim quem tiver interesse é só entrar em contato' },
-  { id: '2', title: 'Caixas de Papelão', category: 'Papel e Papelão', user: 'Maria Souza', phone: '(21) 98765-4321', location: 'Rio de Janeiro, RJ', description: 'Caixas de papelão resistentes, vários tamanhos disponíveis.' },
-  { id: '3', title: 'Vidros de Conserva', category: 'Vidro', user: 'Carlos Lima', phone: '(31) 97654-3210', location: 'Belo Horizonte, MG', description: 'Potes de vidro com tampa, ideais para decoração e armazenamento.' },
-  { id: '4', title: 'Latas de Alumínio', category: 'Metal', user: 'Ana Costa', phone: '(41) 96543-2109', location: 'Curitiba, PR', description: 'Latas de alumínio amassadas ou inteiras, prontas para reciclagem.' },
-  { id: '5', title: 'Paletes de Madeira', category: 'Madeira', user: 'Pedro Alves', phone: '(51) 95432-1098', location: 'Porto Alegre, RS', description: 'Paletes em bom estado, perfeitos para móveis e decoração.' },
-];
-
+  { id: '1', title: 'Chapéu de bobo da corte', category: 'Papel e papelão', user: 'Brenno', phone: '(11) 91234-5678', location: 'São Paulo, SP', description: '...' },
+  { id: '2', title: 'Espada do God of War', category: 'Plástico', user: 'Gabriel', phone: '(11) 96543-2109', location: 'Curitiba, PR', description: 'Fiz essa espada para um cosplay do Kratos na BGS de 2025, estou doando está espada pois ela não tem mais utilidade para mim quem tiver interesse é só entrar em contato.'},
+]
 type Ad = typeof ADS[0];
 
 const AVALIACOES = [
-  { id: 1, produto_id: '1', usuario: 'Maria Souza', comentario: 'Muito bom atendimento, recomendo!', data: '10/06/2025' },
-  { id: 2, produto_id: '1', usuario: 'Carlos Lima', comentario: 'Boa negociação, mas atrasou um pouco.', data: '11/06/2025' },
-  { id: 3, produto_id: '2', usuario: 'João Silva', comentario: 'Produto chegou amassado.', data: '12/06/2025' },
+  { id: 1, produto_id: '2', usuario: 'Maria Souza', comentario: 'Gostei bastante das peças, estão bem conservadas', data: '10/06/2025' },
+  { id: 2, produto_id: '2', usuario: 'Carlos Lima', comentario: 'Achei as peças feias.', data: '11/06/2025' },
+  { id: 3, produto_id: '1', usuario: 'João Silva', comentario: 'A espada chegou amassada :(', data: '12/06/2025' },
 ];
 
 const CATEGORIAS = [
